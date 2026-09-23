@@ -18,7 +18,7 @@ Let's assume we have an input sequence of length $L$ (text length) and an embedd
 
 You need to define the weights for three matrices: $W^Q$, $W^K$, and $W^V$. They will have dimensions $(d_{\text{model}} \times d_k)$ and $(d_{\text{model}} \times d_v)$, respectively.
 
-### [weight-initialization.py](https://github.com/Logic-HQ/didactic-octo-memory/blob/main/cheat-sheets/weight-initialization.py)
+### [attention_layers.py](https://github.com/Logic-HQ/didactic-octo-memory/blob/main/cheat-sheets/attention_layers.py)
 
 
 ### Step 2: Integration into Context (Usage Example)
