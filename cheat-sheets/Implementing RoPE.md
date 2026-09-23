@@ -16,7 +16,6 @@ Instead of rotating the entire tensor at once, we will work with individual dime
 2. **$\sin$ and $\cos$:** We create two sets of vectors ($\sin$ and $\cos$) for each dimension $d$. Rotating a two-dimensional vector (e.g., $(q_i, q_{i+1})$) around an axis is a classic trigonometric trick.
 3. **Scaling:** We use a formula similar to that used in other LLM architectures.
 
-### 💡 Final Conclusion on Application
 
 In the full implementation of RoPE, you don't just rotate $Q$ and $K$. You apply the **Rotary Dot-Product Attention**:
 
