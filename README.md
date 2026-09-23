@@ -1,4 +1,5 @@
-# didactic-octo-memory
+# DOM  Didactic Octo Memory
+### didactic-octo-memory
 Triton CUDA Kernel Optimization for LLM Attention and GEMM R&amp;D
 
 ## Project Structure Overview
