@@ -1,6 +1,4 @@
-Here is the English translation of the provided Russian text:
-
-**Excellent! The transition from theory to code is the most important part.**
+# Rotary Positional Embedding
 
 Since RoPE is a complex mathematical operation, its implementation requires working with matrices and trigonometric functions. In PyTorch, we implement this by creating a function that rotates the vectors $Q$ and $K$.
 
