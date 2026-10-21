@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
+project(ZeroOverheadInference LANGUAGES CXX CUDA)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -O3 --use_fast_math -Xcompiler -Wall")
+set(CMAKE_CUDA_ARCHITECTURES native)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# --- Target 1: Core Performance Telemetry Executable ---
+add_executable(zero_overhead_inference
+    src/main.cpp
+    src/allocator.cu
+    src/scheduler.cu
+    src/kernels.cu
+)
+target_link_libraries(zero_overhead_inference PRIVATE cudart)
+
+# --- Target 2: Automated Correctness Unit Testing Suite ---
+# To use Catch2, simply download "catch.hpp" into your tests/ directory
+add_executable(run_tests
+    tests/test_engine.cpp
+    src/allocator.cu
+    src/scheduler.cu
+    src/kernels.cu
+)
+target_link_libraries(run_tests PRIVATE cudart)
