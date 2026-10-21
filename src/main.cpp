@@ -74,6 +74,16 @@ int main() {
     engine.add_linear_layer(BATCH_SIZE, HIDDEN_DIM, INPUT_DIM, 0.001f, d_w1, d_b1);
     engine.add_linear_layer(BATCH_SIZE, OUTPUT_DIM, HIDDEN_DIM, 0.002f, d_w2, d_b2);
 
+   // To configure our hidden layers to use Fused ReLU while keeping the final output layer linear
+   // Update the engine registration setup lines in src/main.cpp:
+
+   // Layer 1 targets hidden outputs -> We fuse ReLU activation here!
+   //engine.add_linear_layer(BATCH_SIZE, HIDDEN_DIM, INPUT_DIM, 0.001f, true, d_w1, d_b1);
+
+   // Layer 2 is our network head/classifier classification score output -> Keep ReLU false
+   // engine.add_linear_layer(BATCH_SIZE, OUTPUT_DIM, HIDDEN_DIM, 0.002f, false, d_w2, d_b2);
+
+
     // Run an initial warm-up pass to let CUDA stabilize the hardware clocks
     std::cout << " -> Warming up execution context layers...\n";
     engine.forward(d_input, d_output, 0);
