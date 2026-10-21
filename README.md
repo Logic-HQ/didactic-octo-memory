@@ -61,8 +61,9 @@ graph TD;
 
 ```
 
+## Extra features 
 
-## Physical Layout & Component Boundary Mapping
+### Physical Layout & Component Boundary Mapping
 
 ```ASCII
 +---------------------------------------------------------------------------------------+
@@ -116,3 +117,12 @@ graph TD;
 |   +-------------------------------------------------------------------------------+   |
 +---------------------------------------------------------------------------------------+
 ```
+
+
+Architectural Showcases in these Diagrams:
+
+1. The Fused Pipeline Loop (Steps A \(\rightarrow \) B \(\rightarrow \) C): Most applications load data from Global VRAM, execute, and write it back just to process a ReLU step. De-quantization, Bias-Addition, and Activation (ReLU) happen entirely in-register inside the Streaming Multiprocessor before hitting the memory lanes.
+2. The Ping-Pong Ping Isolation: Technical evaluators how the framework guarantees an unalterable, flat memory line. The Allocator is not calculating offsets dynamically during execution—it just alternates two static blocks back and forth via an integer pointer flip.
+3. True Asynchronous Hardware Paths: The control scheduler completely separates from the legacy host tracking default stream. The engine launches everything onto non-blocking pipelines, meaning the CPU is immediately freed to do other tasks while the hardware queues evaluate.
+
+
