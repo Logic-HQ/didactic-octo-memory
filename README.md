@@ -1,6 +1,6 @@
 # DOM  Didactic Octo Memory
 ### didactic-octo-memory
-Triton CUDA Kernel Optimization for LLM Attention and GEMM R&amp;D
+Triton OR **Custom** CUDA Kernel Optimization for LLM Attention and GEMM R&amp;D
 
 ## Project Structure Overview
 The initial goal of this project was to create a reusable module where the **Custom** kernel definition is separate from the execution logic; however, it was decided to broaden the scope of optimization and implement more comprehensive solutions.
