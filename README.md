@@ -7,6 +7,8 @@ The initial goal of this project was to create a reusable module where the **Cus
 
 Please read the:
 [WIKI](https://github.com/Logic-HQ/didactic-octo-memory/wiki)
+and
+[The project structure overview and functional description](https://github.com/Logic-HQ/didactic-octo-memory/wiki/Structure-Overview)
 
 [How to Compile and Run ](https://github.com/Logic-HQ/didactic-octo-memory/blob/main/docs/How%20to%20run.md)
 
